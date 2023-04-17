@@ -23,14 +23,24 @@
             document.write("<big>" + fraseAImprimir + "</big>");
             saltarLinea();
         }
+        function calcularIndiceMasaCorporal(pesoUsuario, alturaUsuario){
 
-        let anhoActual = 2023;
+            return pesoUsuario / (alturaUsuario * alturaUsuario);
 
+        }
 
-        imprimir("Listado de edades")
-        imprimir("Jeffry tiene: " + (anhoActual - 2002) + " años");
-        imprimir("Miguel tiene: " + (anhoActual - 2001) + " años");
-        imprimir("Pablo tiene: " + (anhoActual - 2005) + " años");
+        imprimir("Hola, este programa calcula su Indice de Masa Corporar (IMC)");
+
+        imprimir("Para continuar necesita ingresar su peso en kilogramos y su altura en metros");
+
+        let pesoUsuario = prompt("Ingrese su peso en kilogramos");
+        let alturaUsuario = prompt("Ingrese su altura en metros");
+
+        
+
+        imprimir("Su indice de masa corporal es: " + Math.round(calcularIndiceMasaCorporal(pesoUsuario,alturaUsuario)));
+        
+        
     </script>
 </body>
 </html>
