@@ -11,18 +11,25 @@
 
         // Realizar tarea para que haga todo de manera dinamica
         function saltarLinea() {
-            document.write("<br>")
-            document.write("<br>")
-            document.write("<br>")
-            document.write("<hr>")
-            document.write("<br>")
-            document.write("<br>")
+            document.write("<br>");
+            document.write("<hr>");
+            document.write("<br>");
+            document.write("<br>");
         }
 
         function imprimir(fraseAImprimir) {
             document.write("<big>" + fraseAImprimir + "</big>");
             saltarLinea();
         }
+
+        imprimir("Programa Calculo Puntos Futbol");
+
+        let victorias = parseInt(prompt("Ingrese la cantidad de victorias"));
+        let empates = parseInt(prompt("Ingrese la cantidad de empates"));
+
+        let puntosTotales = (victorias * 3) + empates;
+        
+        imprimir("El total de puntos del equipo es de: " + puntosTotales + " pts.");
         
     </script>
 </body>
