@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa - Buzón de opiniones ("Filtro de derechos")</title>
+    <script>
+        function imprimirDocumento(fraseAImprimir){
+            document.write("<big> "+ fraseAImprimir + "</big>");
+        }
+
+        function saltarLinea(){
+            document.write("<br>");
+            document.write("<hr>");
+        }
+
+        imprimirDocumento("Filtro de derechos")
+        saltarLinea();
+        imprimirDocumento("Este programa te dice tus derechos para hacer opiniones")
+
+
+        let raza = prompt("¿Eres negro, blanco o mujer?");
+
+
+        if (raza == "negro" || raza == "stwart" || raza == "nelson" || raza == "diego" ){
+            saltarLinea();
+            imprimirDocumento("Lo sentimos, no tiene derechos. Es negro, osea que tiene menos derechos que las mujeres");
+        } else if (raza == "mujer"){
+            saltarLinea();
+            imprimirDocumento("No tiene derechos");
+            imprimirDocumento("Es mujer");
+        } else {
+            saltarLinea();
+            imprimirDocumento("Usted tiene todos los derechos");
+            saltarLinea();
+            imprimirDocumento("Acceso concedido; tiene todos los privilegios");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
