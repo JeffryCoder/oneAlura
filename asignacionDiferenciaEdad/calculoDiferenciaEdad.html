@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function imprimir (fraseAImprimir){
+
+            document.write(fraseAImprimir);
+            saltarLinea();
+        }
+
+        function saltarLinea (){
+
+            document.write("<br>");
+            document.write("<br>");
+
+        }
+        let miEdad = 21;
+        let edadHermano = 19;
+
+        let diferenciaEdad = miEdad - edadHermano;
+
+        imprimir("Nuestra diferencia de edad son: " + diferenciaEdad + " años");
+    </script>
+</body>
+</html>
