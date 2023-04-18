@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<h1>Recetas de Armando</h1>
+
+<script>
+    /**
+     * Al probar el código, descubrimos que funciona. El problema es que podemos agregar ingredientes repetidos a una lista de recetas. Cambia el código para que no se puedan agregar los ingredientes repetidos.
+     * Podrás encontrar la solución fácilmente haciendo clic en "Ver opinión del Instructor", pero primero intenta resolver el ejercicio por tu cuenta. Si tienes alguna pregunta, visita el foro.
+     * NOTA: No necesitas responder aquí, intenta resolver el problema en tu computadora y compara tu solución con el código que mostramos a continuación.
+    */
+    var ingredientes = [];
+    var cantidad = parseInt(prompt("¿Cuántos ingredientes vas a añadir?"));
+    var contador = 1;
+
+    while( contador <= cantidad) {
+        var ingrediente = prompt("Informe el ingrediente " + contador);
+        ingredientes.push(ingrediente);
+        contador++;
+    }
+
+    console.log(ingredientes);
+
+</script>
