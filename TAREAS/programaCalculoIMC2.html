@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Realizar tarea para que haga todo de manera dinamica
+        function saltarLinea() {
+            document.write("<br>")
+            document.write("<br>")
+            document.write("<br>")
+            document.write("<hr>")
+            document.write("<br>")
+            document.write("<br>")
+        }
+
+        function imprimir(fraseAImprimir) {
+            document.write("<big>" + fraseAImprimir + "</big>");
+            saltarLinea();
+        }
+        function calcularIndiceMasaCorporal(pesoUsuario, alturaUsuario){
+
+            return pesoUsuario / (alturaUsuario * alturaUsuario);
+
+        }
+
+        imprimir("Hola, este programa calcula su Indice de Masa Corporar (IMC)");
+
+        imprimir("Para continuar necesita ingresar su peso en kilogramos y su altura en metros");
+
+        let pesoUsuario = prompt("Ingrese su peso en kilogramos");
+        let alturaUsuario = prompt("Ingrese su altura en metros");
+
+        imprimir("Su indice de masa corporal es: " + Math.round(calcularIndiceMasaCorporal(pesoUsuario,alturaUsuario)));
+        // RECORDAR REALIZAR ESTA TAREA AGREGANDOLE MAS INFORMACION SEGUN EL INDICE DE MASA CORPORAL
+    </script>
+</body>
+</html>
