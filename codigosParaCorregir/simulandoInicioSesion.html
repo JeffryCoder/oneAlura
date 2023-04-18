@@ -6,15 +6,35 @@
      * Atención: si lo hace bien en el primer intento, 
      * no tiene sentido seguir preguntando por su nombre de usuario y contraseña.
     */
+
+    let intentosAccesoPermitido = 3;
+
+    
     var inicioDeSesionRegistrado = "alura";
     var contrasenhaRegistrada = "alura321";
 
-    var inicioDeSesionIngresado = prompt("Ingrese su usuario");
-    var contrasenhaIngresada = prompt("Ingrese su contraseña");
+    
 
-    if( inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada ) {
+    while (intentosAccesoPermitido >= 1){
+
+        var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+        var contrasenhaIngresada = prompt("Ingrese su contraseña");
+
+        if( inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada ) {
         alert("Bienvenido al sistema " + inicioDeSesionIngresado);
-    } else {
-        alert("inicio de sesión inválido. Favor intente de nuevo");
+        break;
+        } else {
+            intentosAccesoPermitido--;
+
+            if (intentosAccesoPermitido == 0)
+            {
+                alert("Agoto la cantidad de intentos permitidos. Su usuario ha sido bloqueado");
+                break;
+            }
+            alert("inicio de sesión inválido. Favor intente de nuevo. Le quedan " + intentosAccesoPermitido + " intentos.");
+            
+        }
+
     }
+    
 </script>
