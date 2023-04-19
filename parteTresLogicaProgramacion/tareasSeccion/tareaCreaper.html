@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="400">
+    <script>
+
+        let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+
+        // Cabeza
+        pincel.fillStyle = "green";
+        pincel.fillRect(0,0,350,300);
+
+        // Hojo izquierdo ---- 2 -----
+        pincel.fillStyle = "black";
+        pincel.fillRect(100,60,60,60);
+
+        // Hojo derecho ------ 3 ------
+        pincel.fillStyle = "black";
+        pincel.fillRect(200,60,60,60);
+
+        // Hojo Nariz
+        pincel.fillStyle = "black";
+        pincel.fillRect(160,120,40,60);
+
+        // Boca izquierda
+        pincel.fillStyle = "black";
+        pincel.fillRect(130,150,30,70);
+
+        // Boca derecho
+        pincel.fillStyle = "black";
+        pincel.fillRect(200,150,30,70);
+
+
+
+    </script>
+</body>
+</html>
