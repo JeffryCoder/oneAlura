@@ -15,8 +15,14 @@
         let pantalla = document.querySelector("canvas");
         let pincel = pantalla.getContext("2d");
 
-        pincel.fillStyle = "green" // Propiedad
+        pincel.fillStyle = "gray" // Fondo
+        pincel.fillRect(0,0,600,400);
+
+        pincel.fillStyle = "green" // Primer rectangulo
         pincel.fillRect(0,0,200,400);
+
+        pincel.fillStyle = "red" // Tercer rectangulo
+        pincel.fillRect(400,0,600,400);
 
     </script>
 </body>
