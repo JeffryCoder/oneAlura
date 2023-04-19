@@ -22,7 +22,32 @@
         pincel.fillRect(0,0,200,400);
 
         pincel.fillStyle = "red" // Tercer rectangulo
-        pincel.fillRect(400,0,600,400);
+        pincel.fillRect(400,0,200,400); // Las dos primeras coordenadas son las coordenadas de la esquina superior izquierda o eje x y las segundas coordenadas corresponden al eje y
+
+        // Metodo para utilizar un camino para dibujar. 
+        //Con pincel.beginPath(); se inicia el camino y con pincel.closePath(); 
+        // se cierra el camino
+
+        // Dibujar un triangulo
+        pincel.fillStyle = "yellow";
+        pincel.beginPath();
+        pincel.moveTo(300,200); // Para iniciar de un punto especifico
+        pincel.lineTo(200,400); // Para dibujar una linea desde el punto especificado
+        pincel.lineTo(400,400);
+        pincel.fill(); // Para rellenar el camino
+        pincel.closePath();
+
+
+        // Segundo triangulo
+
+        pincel.fillStyle = "yellow";
+        pincel.beginPath();
+        pincel.moveTo(200,0);
+        pincel.lineTo(300,200);
+        pincel.lineTo(400,0);
+        pincel.fill();
+        pincel.closePath();
+
 
     </script>
 </body>
