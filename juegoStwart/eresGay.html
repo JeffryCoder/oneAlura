@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function imprimirDocumento(fraseAImprimir){
+            document.write(fraseAImprimir);
+        }
+
+        var preguntaUsuarioGay = prompt("¿Eres gay?");
+        var preguntaEstaMintiendo = "";
+        var respuestaEsGay = false;
+
+        switch(preguntaUsuarioGay){
+            case "si": 
+            case "SI": 
+            case "sI":
+            case "Si":
+                respuestaEsGay = true;
+                imprimirDocumento("¡¡¡GAY DETECTADO!!!");
+                console.log("Se metio al switch");
+
+                
+                preguntaEstaMintiendo = prompt("¿Estas mintiendo?");
+
+                switch(preguntaEstaMintiendo){
+                    case "si":
+                    case "SI":
+                    case "sI":
+                        imprimirDocumento("¡¡¡Y A PARTE MENTIROSO!!!");
+                        console.log("Se metio al switch");
+                    break;
+                    case "no":
+                    case "NO":
+                        imprimirDocumento("¡¡¡GAY SINCERO DETECTADOSI!!!");
+                        console.log("Se metio al switch");
+                    break;
+                    default:
+                        imprimirDocumento("¡¡¡MENTIROSO DETECTADO!!!");
+                        console.log("Se metio al switch");
+                    break;
+                }
+
+                break;
+            case "no":
+            case "NO":
+
+            preguntaEstaMintiendo = prompt("¿Estas mintiendo?");
+
+                switch(preguntaEstaMintiendo){
+                    case "si":
+                    case "SI":
+                    case "sI":
+                        imprimirDocumento("¡¡¡GAY MENTIROSO DETECTADO!!!");
+                        console.log("Se metio al switch");
+                    break;
+                    case "no":
+                    case "NO":
+                        imprimirDocumento("¡¡¡GAY MENTIROSO DETECTADO!!!");
+                        console.log("Se metio al switch");
+                    break;
+                    default:
+                        imprimirDocumento("¡¡¡MENTIROSO DETECTADO!!!");
+                        console.log("Se metio al switch");
+                    break;
+                }
+
+                break;
+                
+
+            break;
+            
+
+
+            default:
+                imprimirDocumento("Entonces eres un hombre heterosexual");
+                console.log("Se metio al default");
+        }
+    </script>
+
+    
+
+
+
+</body>
+</html>
