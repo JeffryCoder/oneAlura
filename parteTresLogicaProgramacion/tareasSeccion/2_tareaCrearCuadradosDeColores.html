@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <canvas width="600" height="400"></canvas>
+    <script>
+        /**
+         * #Recordar hacer cuadros de colores verdes pequeños
+         * ### Primero hacer uno, luego modificar la función para así poder hacer más cuadros en la misma columna, y luego en filas.
+         * Posteriormente, mandar por parametros la posicion en X y Y, sumando de 50 en 50, luego ocupar toda la posicin del canvas, para posteriormente hacer mas cuadros de otros colores
+         * Recordar también hacer la flor con los circulos, utulizando la funcion arch
+         * Más adelante, realizar el reto del grafico de barras.
+        */
+        function dibujarCuadrado(x, y, color){
+
+            var pantalla = document.querySelector('canvas');
+            var pincel = pantalla.getContext('2d');
+
+            // Relleno del rectangulo
+            pincel.fillStyle = color;
+            pincel.fillRect(x, y, 50, 50);
+
+            // Borde del rectangulo
+            pincel.strokeStyle = 'black';
+            pincel.strokeRect(x, y, 50, 50);
+
+            }
+
+            // Dibujar cuadrado en toda la columna (EJE X)
+            for (var i = 0; i < 600; i+=50) {
+                dibujarCuadrado(i, 0, 'green');
+            }
+
+
+            for (var i = 0; i < 600; i+=50) {
+                dibujarCuadrado(i, 50, 'yellow');
+            }
+
+            for (var i = 0; i < 600; i+=50) {
+                dibujarCuadrado(i, 100, 'red');
+            }
+
+
+
+    </script>
+</body>
+</html>
