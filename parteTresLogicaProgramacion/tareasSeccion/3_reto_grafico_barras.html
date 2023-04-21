@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+
+        /**
+         * En 2009: 6% Chrome, 47% Firefox, 41% Internet Explorer/Edge*, 3% Safari, 3% Otros.
+         * En 2019: 81% Chrome, 9% Firefox, 3% Internet Explorer/Edge*, 3% Safari, 4% Otros.
+        */
+        
+        function dibujarRectangulo(x, y, base, altura, color) {
+            var pantalla = document.querySelector("canvas");
+            var pincel = pantalla.getContext("2d");
+    
+            pincel.fillStyle = color;
+            pincel.fillRect(x, y, base, altura);
+            pincel.strokeStyle = "black";
+            pincel.strokeRect(x, y, base, altura);
+        }
+    
+        function escribirTexto(x , y, texto) {
+            var pantalla = document.querySelector("canvas");
+            var pincel = pantalla.getContext("2d");
+    
+            pincel.font="15px Georgia";
+            pincel.fillStyle="black";
+            pincel.fillText(texto, x, y);
+        }
+        // Fondo del canvas
+
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle = "lightgray";
+        pincel.fillRect(0,0,600,400);
+
+        pincel.strokeStyle = "black";
+        pincel.strokeRect(0,0,600,400);
+        
+        /**
+        // Funcionamiento
+        /* x1 = posicionFija y1 = posicion fija   y2 = largoBarra                            
+        
+        // Borde representando el 100% del grafico de barra
+        pincel.strokeStyle = "black";
+        pincel.strokeRect(200,200,50,100);
+        // Borde representando el 100% del grafico de barra
+
+        // GRAFICO 2009
+        escribirTexto(200,190, "2009");
+
+        dibujarRectangulo(200,200,50,6,"blue"); // Chrome 
+        dibujarRectangulo(200,206,50,47,"green"); // Firefox 
+        dibujarRectangulo(200,253,50,41,"yellow"); // Explorer/Edge 
+        dibujarRectangulo(200,294,50,3,"red"); // Safari
+        dibujarRectangulo(200,297,50,3,"gray"); // Otros
+        */
+
+        function dibujarGraficoBarra(posicionHorizontalGrafico){
+            let porcentajeElementos = [20, 20, 20, 20, 20]; 
+            let coloresElementos = ["blue", "green", "yellow", "red", "gray"];
+            let posicionVerticalGrafico = 200;
+
+            // Borde representando el 100% del grafico de barra
+            pincel.strokeStyle = "black";
+            pincel.strokeRect(posicionHorizontalGrafico,200,50,100);
+            // Borde representando el 100% del grafico de barra
+
+            // GRAFICO 2009
+            escribirTexto(posicionHorizontalGrafico,190, "2009");
+
+            // Rectangulo de referencia
+            // dibujarRectangulo(posicionHorizontalGrafico,200,50,6,"blue"); // Chrome 
+            // dibujarRectangulo(posicionHorizontalGrafico,206,50,47,"green"); // Firefox 
+            // dibujarRectangulo(posicionHorizontalGrafico,253,50,41,"yellow"); // Explorer/Edge 
+            // dibujarRectangulo(posicionHorizontalGrafico,294,50,3,"red"); // Safari
+            // dibujarRectangulo(posicionHorizontalGrafico,297,50,3,"gray"); // Otros
+
+            
+            for (i = 0; i < porcentajeElementos.length; i++){
+
+                
+
+                if ( i === 0){
+
+                    dibujarRectangulo(posicionHorizontalGrafico, posicionVerticalGrafico, 50, porcentajeElementos[i], coloresElementos[i]);
+                    console.log(porcentajeElementos[i],coloresElementos[i] );
+
+                }else {
+
+                    dibujarRectangulo(posicionHorizontalGrafico, posicionVerticalGrafico = posicionVerticalGrafico + porcentajeElementos[i], 50,porcentajeElementos[i], coloresElementos[i]
+                    );
+
+                    console.log(porcentajeElementos[i],coloresElementos[i])
+
+
+                }
+
+            }
+            
+        }
+        
+        dibujarGraficoBarra(100);
+    
+    </script>
+</body>
+</html>
