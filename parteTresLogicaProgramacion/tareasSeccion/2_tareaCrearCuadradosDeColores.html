@@ -13,10 +13,13 @@
         /**
          * #Recordar hacer cuadros de colores verdes pequeños
          * ### Primero hacer uno, luego modificar la función para así poder hacer más cuadros en la misma columna, y luego en filas.
-         * Posteriormente, mandar por parametros la posicion en X y Y, sumando de 50 en 50, luego ocupar toda la posicin del canvas, para posteriormente hacer mas cuadros de otros colores
-         * Recordar también hacer la flor con los circulos, utulizando la funcion arch
-         * Más adelante, realizar el reto del grafico de barras.
+         * ### Posteriormente, mandar por parametros la posicion en X y Y, sumando de 50 en 50, luego ocupar toda la posicin del canvas, para posteriormente hacer mas cuadros de otros colores
+         * 
+         * 
+         
         */
+
+        /*
         function dibujarCuadrado(x, y, color){
 
             var pantalla = document.querySelector('canvas');
@@ -46,7 +49,60 @@
                 dibujarCuadrado(i, 100, 'red');
             }
 
+            */
 
+            /* * Recordar también hacer la flor con los circulos, utulizando la funcion arch
+            *   Más adelante, realizar el reto del grafico de barras.
+            */
+
+            var pantalla = document.querySelector("canvas");
+            var pincel = pantalla.getContext("2d");
+
+            // Fondo lightgray
+
+            pincel.fillStyle = "lightgray";
+            pincel.fillRect(0, 0, 600, 400);
+
+
+            function dibujarCirculo(x, y, radio, color){
+
+               pincel.fillStyle = color;
+               pincel.beginPath();
+               pincel.arc(x, y, radio, 0, 2*3.14);
+               pincel.fill();
+
+            }
+            /*
+            dibujarCirculo(300,200,15,"red");
+            dibujarCirculo(330,200,15,"black");
+            dibujarCirculo(300,230,15,"blue");
+            dibujarCirculo(300,170,15,"yellow");
+            dibujarCirculo(270,200,15,"orange");
+            */
+            /*
+            (x - y)
+            -------
+            (x + 30)
+            ( y + 30)
+            (y - 30)
+            (x - 30)
+            */
+
+            function dibujarFlor(centroReferenciaFlorX, centroReferenciaFlorY){
+
+                var variante = 30;
+
+                dibujarCirculo(centroReferenciaFlorX,centroReferenciaFlorY,15,"red");
+                dibujarCirculo(centroReferenciaFlorX + variante,centroReferenciaFlorY,15,"black");
+                dibujarCirculo(centroReferenciaFlorX, centroReferenciaFlorY + variante,15,"blue");
+                dibujarCirculo(centroReferenciaFlorX,centroReferenciaFlorY - variante,15,"yellow");
+                dibujarCirculo(centroReferenciaFlorX - variante,centroReferenciaFlorY,15,"orange");
+                
+            }
+            
+            dibujarFlor(300,200);
+            dibujarFlor(400,100);
+            dibujarFlor(100,300);
 
     </script>
 </body>
