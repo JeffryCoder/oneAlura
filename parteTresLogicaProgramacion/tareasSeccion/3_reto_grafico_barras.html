@@ -65,9 +65,9 @@
         dibujarRectangulo(200,297,50,3,"gray"); // Otros
         */
 
-        function dibujarGraficoBarra(posicionHorizontalGrafico){
-            let porcentajeElementos = [81, 9, 3, 3, 4 ]; 
-            let coloresElementos = ["blue", "green", "yellow", "red", "gray"];
+        function dibujarGraficoBarra(posicionHorizontalGrafico, texto, porcentajeElementos, coloresElementos){
+            // let porcentajeElementos = [81, 9, 3, 3, 4 ]; 
+            // let coloresElementos = ["blue", "green", "yellow", "red", "gray"];
             let posicionVerticalGrafico = 200;
 
             // Borde representando el 100% del grafico de barra
@@ -76,7 +76,7 @@
             // Borde representando el 100% del grafico de barra
 
             // GRAFICO 2009
-            escribirTexto(posicionHorizontalGrafico,190, "2009");
+            escribirTexto(posicionHorizontalGrafico,190, texto);
 
             // Rectangulo de referencia
             // dibujarRectangulo(posicionHorizontalGrafico,200,50,6,"blue"); // Chrome 
@@ -104,11 +104,19 @@
                 posicionVerticalGrafico += porcentajeElementos[i];
 
             }
+
+
+            
+            // dibujarGraficoBarra(posicionHorizontal, texto, porcentajeElementos, coloresElementos) 
+            
             
         }
         
-        dibujarGraficoBarra(100);
-    
+        dibujarGraficoBarra(100, "2009", [6, 47, 41, 3, 3], ["blue", "green", "yellow", "red", "gray"]);
+        dibujarGraficoBarra(200, "2019", [81, 9, 3, 3, 4], ["blue", "green", "yellow", "red", "gray"]);
+        dibujarGraficoBarra(300, "Jeffry", [20, 20,20, 20, 20], ["blue", "green", "yellow", "red", "gray"]);
+        dibujarGraficoBarra(400, "Anderson", [10, 20,30, 20, 20], ["blue", "green", "yellow", "red", "gray"]);
+        
     </script>
 </body>
 </html>
