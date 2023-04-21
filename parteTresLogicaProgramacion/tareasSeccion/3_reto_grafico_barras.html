@@ -66,7 +66,7 @@
         */
 
         function dibujarGraficoBarra(posicionHorizontalGrafico){
-            let porcentajeElementos = [20, 20, 20, 20, 20]; 
+            let porcentajeElementos = [20, 20, 20, 20, 20 ]; 
             let coloresElementos = ["blue", "green", "yellow", "red", "gray"];
             let posicionVerticalGrafico = 200;
 
@@ -94,16 +94,18 @@
 
                     dibujarRectangulo(posicionHorizontalGrafico, posicionVerticalGrafico, 50, porcentajeElementos[i], coloresElementos[i]);
                     console.log(porcentajeElementos[i],coloresElementos[i] );
-
+                    
                 }else {
 
-                    dibujarRectangulo(posicionHorizontalGrafico, posicionVerticalGrafico = posicionVerticalGrafico + porcentajeElementos[i], 50,porcentajeElementos[i], coloresElementos[i]
-                    );
+                    dibujarRectangulo(posicionHorizontalGrafico, posicionVerticalGrafico, 50, porcentajeElementos[i], coloresElementos[i]);
+                    console.log(porcentajeElementos[i],coloresElementos[i] );
+                    
 
-                    console.log(porcentajeElementos[i],coloresElementos[i])
+                    
 
 
                 }
+                posicionVerticalGrafico = posicionVerticalGrafico + porcentajeElementos[i];
 
             }
             
