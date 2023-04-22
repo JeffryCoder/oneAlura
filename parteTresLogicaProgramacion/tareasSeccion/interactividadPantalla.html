@@ -21,17 +21,25 @@
             alert(xCursor + ", " + yCursor)
         }
 
-        function dibujarCirculo(x, y, radio, color){
+        function dibujarCirculo(evento){
+
+            let xCursor = evento.pageX - pantalla.offsetLeft;  // Capturamos la posicion con el .pageX y con el .offsetLeft restamos la posicion del canvas por fuera que sobra
+            let yCursor = evento.pageY - pantalla.offsetTop;
+
             pincel.beginPath();
-            pincel.arc(x, y, radio, 0, 2 * Math.PI);
+            pincel.arc(xCursor, yCursor, 10, 0, 2 * Math.PI);
             pincel.fillStyle = "purple";
             pincel.fill();
             pincel.closePath();
+
+            console.log( " (" +xCursor + "," + yCursor + ")");
         }
 
         pincel.fillStyle = "lightgray";
         pincel.fillRect(0,0,600,400);
-        pantalla.onclick = enviarAlerta;
+        // pantalla.onclick = enviarAlerta;
+
+        pantalla.onclick = dibujarCirculo;
 
     </script>
 </body>
