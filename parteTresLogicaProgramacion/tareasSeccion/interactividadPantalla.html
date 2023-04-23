@@ -28,26 +28,57 @@
 
             pincel.beginPath();
             pincel.arc(xCursor, yCursor, 10, 0, 2 * Math.PI);
-            pincel.fillStyle = "purple";
+            pincel.fillStyle = listaColoresPincel[colorElegido];
             pincel.fill();
             pincel.closePath();
 
             console.log( " (" +xCursor + "," + yCursor + ")");
         }
+        /*
+
+        Ejercicio
+
+        Ahora que ya recapitulamos lo que hicimos en este capítulo, tengo una propuesta de alteración del código de arriba con el objetivo que 
+        apliques los conocimientos adquiridos hasta aquí, lo más importante es que desarrolles tu lógica de programación. 
+        Intenta resolverlo y de todas maneras puedes ver la solución del ejercicio haciendo clic en el botón Ver opinión del instructor.
+
+        Bueno el desafío es el siguiente, vamos a liberar que el usuario pueda alterar el color de los círculos que son diseñados en la pantalla. 
+        Los colores que liberaremos serán azul, rojo y verde (blue, red y green). Esa lista de colores te debe recordar algo que ya vimos, los arrays en el anterior curso.
+
+        ¿Cómo dejaremos al usuario escoger el color? A cada clic del botón DERECHO del mouse, el color padrón que es blue, deberá cambiarse a red. 
+        Si el usuario realiza otro clic del botón DERECHO, el color del círculo se cambiará a green, debes respetar el orden de alteración de los colores (blue, red y green). 
+        En caso de que el usuario vuelva a presionar el botón DERECHO el color debe volver a ser blue.
+
+        Para que las circunferencias aparezcan seguimos manteniendo la misma lógica, ellas aparecerán con cada clic IZQUIERDO del mouse.
+
+        La instrucción para capturar el evento cuando el usuario hace clic en el botón derecho todavía no fue enseñada, 
+        pero es fácil de ser implementada, el comando a ser usado es oncontextmenu. La sintaxis es igual al evento onclick que usamos para capturar el clic del botón 
+        izquierdo del mouse, de todas formas te muestro a continuación cómo puedes usar esa instrucción:
+
+
+        */
         // Espacio para desarrollar la funcion de cambiar el color del pincel
-        function cambiarColorPincel(){
+
+        var listaColoresPincel = ["blue", "red", "green"];
+        var colorElegido = 0;
+
+        function cambiarColorPincel(evento){
 
 
+            for 
+                    
+            console.log("Se cambio de color");
 
         }
 
-        pantalla.
+        
 
         pincel.fillStyle = "lightgray";
         pincel.fillRect(0,0,600,400);
         // pantalla.onclick = enviarAlerta;
 
         pantalla.onclick = dibujarCirculo;
+        pantalla.oncontextmenu = cambiarColorPincel;
 
     </script>
 </body>
