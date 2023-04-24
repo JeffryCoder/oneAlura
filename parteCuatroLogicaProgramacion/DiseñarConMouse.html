@@ -43,7 +43,7 @@
 
         puedoDibujar = false;
     }
-    var paletaDeColores = ["red", "green", "blue"];
+    var paletaDeColores = ["red", "green", "blue", "yellow", "purple", "black", "lightgray", "white"];
     var xInicialPaletaColores = 0;
 
     function dibujarPaletaDeColores(){
@@ -51,18 +51,14 @@
         
         for (i = 0; i <= paletaDeColores.length; i++){
 
-            
-            if (i == 3){
+            if (i == paletaDeColores.length){
                 xInicialPaletaColores = 0;
                 console.log("Se reseteo");
                 break;
-                
 
             }else{
                 pincel.fillStyle = paletaDeColores[i];
                 pincel.fillRect(xInicialPaletaColores,0,50,50);
-                
-
                 
                 //console.log("Se dibujo la paleta de colores " + pincel.fillStyle);
 
