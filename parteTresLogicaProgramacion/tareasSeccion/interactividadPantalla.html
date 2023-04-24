@@ -63,12 +63,21 @@
         var colorElegido = 0;
 
         function cambiarColorPincel(evento){
+ 
+            
+            
+            if (colorElegido === listaColoresPincel.length - 1){
+                colorElegido = 0;
+                console.log("Se cambio al color azul")
+            }else{
+                colorElegido = colorElegido + 1;
+                console.log("Se cambio de color al: " + listaColoresPincel[colorElegido]);
 
+            }
+            
 
-            for 
-                    
-            console.log("Se cambio de color");
-
+            
+            
         }
 
         
