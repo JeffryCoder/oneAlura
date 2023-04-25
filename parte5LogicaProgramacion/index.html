@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle = "lightgray";
+        pincel.fillRect(0,0,600,400);
+
+        var XTiroAlBlancoAleatorio = 10;
+        var YTiroAlBlancoAleatorio = 20;
+        var radio = 10;
+        function dibujarCirculo(x,y,radio){
+
+            pincel.fillStyle = "blue";
+            pincel.beginPath();
+            pincel.arc(x,y,radio,0, 2 * Math.PI);
+            pincel.fill();
+
+        }
+
+        function limpiarPantalla(){
+
+            pincel.clearRect(0,0,600,400);
+
+        }
+
+        function sortearPosicion(maximo){
+
+            return Math.floor(Math.random() * maximo);
+        }
+        
+        function actualizarPantalla(){
+
+            limpiarPantalla();
+
+            XTiroAlBlancoAleatorio = sortearPosicion(600);
+            YTiroAlBlancoAleatorio = sortearPosicion(400);
+            dibujarTiroAlBlanco(XTiroAlBlancoAleatorio, YTiroAlBlancoAleatorio);
+            
+
+        }
+        setInterval(actualizarPantalla,1000);
+        pantalla.onclick = dispararAlBlanco;
+
+
+        
+
+
+        function dispararAlBlanco(evento){
+        
+
+            var XCursor = evento.pageX - pantalla.offsetLeft;
+            var yCursor = evento.pageY - pantalla.offsetTop;
+
+            if ((
+                XCursor < XTiroAlBlancoAleatorio + radio 
+            ) && ( 
+                XCursor > XTiroAlBlancoAleatorio - radio
+            )&& (
+                yCursor < YTiroAlBlancoAleatorio + radio
+            ) &&(
+                yCursor > YTiroAlBlancoAleatorio - radio
+            )){
+                alert("Diste en el blanco!");
+            }
+
+        }
+        function dibujarTiroAlBlanco(){
+
+            // Graficando el tiro al blanco
+            radio = 10;
+            // Base
+            pincel.beginPath();
+            pincel.fillStyle = "red";
+            pincel.arc(XTiroAlBlancoAleatorio,YTiroAlBlancoAleatorio,radio + 40,0, 2 * Math.PI);
+            pincel.fill();
+            pincel.closePath();
+            // Centro
+            pincel.beginPath();
+            pincel.fillStyle = "white";
+            pincel.arc(XTiroAlBlancoAleatorio,YTiroAlBlancoAleatorio,radio+20,0, 2 * Math.PI);
+            pincel.fill();
+            // Objetivo
+            pincel.beginPath();
+            pincel.fillStyle = "red";
+            pincel.arc(XTiroAlBlancoAleatorio,YTiroAlBlancoAleatorio,radio+5,0, 2 * Math.PI);
+            pincel.fill();
+        }
+        
+    </script>
+</body>
+</html>
