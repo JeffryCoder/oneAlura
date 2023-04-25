@@ -18,20 +18,25 @@
     pincel.fillRect(0, 0, 600, 400);
 
     var puedoDibujar = false;
-    function dibujarCirculo(evento) {
+    
+    function dibujarCirculo(evento, color) {
+        pantalla.onclick = seleccionarColorPaletaColores;
+        
 
+        var colorPaletaColoresElegido  
         if(puedoDibujar) {
             var x = evento.pageX - pantalla.offsetLeft;
             var y = evento.pageY - pantalla.offsetTop;
-            pincel.fillStyle = 'blue';
+            pincel.fillStyle = "black";
             pincel.beginPath();
             pincel.arc(x, y, 5, 0, 2 * 3.14);
             pincel.fill();
         }
 
     }
-
     pantalla.onmousemove = dibujarCirculo;
+
+    
 
     function habilitarDibujar() {
 
@@ -54,7 +59,7 @@
 
             if (i == paletaDeColores.length){
                 xInicialPaletaColores = 0;
-                console.log("Se reseteo");
+                //console.log("Se reseteo");
                 break;
 
             }else{
@@ -65,7 +70,7 @@
 
             }
             xInicialPaletaColores = posicionXPaletaDeColores[i];
-            console.log("Se ejecuto el ciclo");
+            // console.log("Se ejecuto el ciclo");
 
 
         }
@@ -86,11 +91,13 @@
         var posicionXCursor = evento.pageX - pantalla.offsetLeft;
         var posicionYCursor = evento.pageY - pantalla.offsetTop;
 
-        console.log (posicionXCursor + "," + posicionYCursor);
-        console.log("Antes de entrar al ciclo");
+        //console.log (posicionXCursor + "," + posicionYCursor);
+        
+
+        var colorPaletaColoresElegido = "";
+
         for (i = 0; i <= paletaDeColores.length; i++){
 
-        
                 if (
 
                 posicionXCursor > posicionXPaletaDeColores[i] && posicionXCursor < posicionXPaletaDeColores[i + 1]
@@ -98,14 +105,18 @@
             ){
 
                 console.log("Estas seleccionando el color: " + paletaDeColores[i]);
-
+        
+                colorPaletaColoresElegido = paletaDeColores[i];
             }
-
-            console.log("Se ejecuto el ciclo de Selecion Paleta Colores");
         }
+
+        
         
     }
-    pantalla.onclick = seleccionarColorPaletaColores;
+
+    
+
+
     dibujarPaletaDeColores(); // Dibujando la paleta de colores por primera vez
 
 </script>
