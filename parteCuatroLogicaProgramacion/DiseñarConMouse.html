@@ -18,16 +18,15 @@
     pincel.fillRect(0, 0, 600, 400);
 
     var puedoDibujar = false;
-    
-    function dibujarCirculo(evento, color) {
+    var dibujandoSoltado = false;
+    function dibujarCirculo(evento) {
         pantalla.onclick = seleccionarColorPaletaColores;
         
 
-        var colorPaletaColoresElegido  
+        
         if(puedoDibujar) {
             var x = evento.pageX - pantalla.offsetLeft;
             var y = evento.pageY - pantalla.offsetTop;
-            //pincel.fillStyle = "black";
             pincel.beginPath();
             pincel.arc(x, y, 5, 0, 2 * 3.14);
             pincel.fill();
@@ -41,15 +40,16 @@
     function habilitarDibujar() {
 
         puedoDibujar = true;
+        dibujandoSoltado = true;
     }
 
     function deshabilitarDibujar() {
 
         puedoDibujar = false;
-        dibujarPaletaDeColores();
+        
     }
-    var paletaDeColores = ["red", "green", "blue"];
-    var posicionXPaletaDeColores = [0, 50, 100, 150];
+    var paletaDeColores = ["red", "green", "blue", "black"];
+    var posicionXPaletaDeColores = [0, 50, 100, 150, 200];
     var xInicialPaletaColores = 0;
 
     function dibujarPaletaDeColores(){
@@ -64,7 +64,10 @@
 
             }else{
                 pincel.beginPath();
+                
                 pincel.fillStyle = paletaDeColores[i];
+            
+                
                 pincel.fillRect(posicionXPaletaDeColores[i],0,50,50);
                 pincel.closePath();
                 //console.log("Se dibujo la paleta de colores " + pincel.fillStyle);
@@ -91,7 +94,7 @@
         
         var posicionXCursor = evento.pageX - pantalla.offsetLeft;
         var posicionYCursor = evento.pageY - pantalla.offsetTop;
-
+        
         //console.log (posicionXCursor + "," + posicionYCursor);
         
 
@@ -101,15 +104,19 @@
 
                 if (
 
-                posicionXCursor > posicionXPaletaDeColores[i] && posicionXCursor < posicionXPaletaDeColores[i + 1]
+                posicionXCursor > posicionXPaletaDeColores[i] && posicionXCursor < posicionXPaletaDeColores[i + 1] && posicionYCursor <= 50
 
             ){
 
                 console.log("Estas seleccionando el color: " + paletaDeColores[i]);
         
-                pincel.fillStyle = paletaDeColores[i];
+                // pincel.fillStyle = paletaDeColores[i];
+                
+                colorPaletaColoresElegido = paletaDeColores[i];
             }
         }
+
+        pincel.fillStyle = colorPaletaColoresElegido;
 
         
         
