@@ -27,7 +27,7 @@
         if(puedoDibujar) {
             var x = evento.pageX - pantalla.offsetLeft;
             var y = evento.pageY - pantalla.offsetTop;
-            pincel.fillStyle = "black";
+            //pincel.fillStyle = "black";
             pincel.beginPath();
             pincel.arc(x, y, 5, 0, 2 * 3.14);
             pincel.fill();
@@ -63,9 +63,10 @@
                 break;
 
             }else{
+                pincel.beginPath();
                 pincel.fillStyle = paletaDeColores[i];
                 pincel.fillRect(posicionXPaletaDeColores[i],0,50,50);
-                
+                pincel.closePath();
                 //console.log("Se dibujo la paleta de colores " + pincel.fillStyle);
 
             }
@@ -106,7 +107,7 @@
 
                 console.log("Estas seleccionando el color: " + paletaDeColores[i]);
         
-                colorPaletaColoresElegido = paletaDeColores[i];
+                pincel.fillStyle = paletaDeColores[i];
             }
         }
 
