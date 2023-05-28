@@ -1,6 +1,10 @@
 body {
     background: #CCCCCC;
 }
+#banner {
+
+    width: 100%;
+}
 h1 {
     text-align: center;
 }
@@ -13,10 +17,7 @@ em strong {
     color:red;
 }
 
-#banner {
 
-    width: 100%;
-}
 #mision {
     font-size: 20px;
 }
